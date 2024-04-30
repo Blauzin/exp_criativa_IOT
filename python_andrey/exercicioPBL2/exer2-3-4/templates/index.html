@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Connected Home</title>
+</head>
+<body>
+    <h1>Menu Principal</h1>
+    <ul>
+        {% for room_name, devices in rooms.items() %}
+        <li><a href="{{ url_for('room', room_name=room_name) }}">{{ room_name.capitalize() }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

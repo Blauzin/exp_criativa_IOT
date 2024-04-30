@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ room_name.capitalize() }}</title>
+</head>
+<body>
+    <h1>{{ room_name.capitalize() }}</h1>
+    <p><a href="{{ url_for('action', room_name=room_name, device='sensor') }}">Sensor</a>: {{ room_data['sensor'] }}</p>
+    <p><a href="{{ url_for('action', room_name=room_name, device='atuador') }}">Atuador</a>: {{ room_data['atuador'] }}</p>
+    <p><a href="{{ url_for('home') }}">Voltar ao menu principal</a></p>
+</body>
+</html>
