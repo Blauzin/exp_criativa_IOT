@@ -1,6 +1,6 @@
 from flask import Flask, render_template, jsonify, request
 from sensors import sensors_bp
-from exercicio20.actuators import actuators_bp
+from exercicioPBL2.exercicio20.actuators import actuators_bp
 
 app = Flask(__name__)
 
