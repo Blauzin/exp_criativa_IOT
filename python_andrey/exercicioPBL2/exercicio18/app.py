@@ -80,7 +80,6 @@ def register_actuator():
 
 @app.route('/add_actuator', methods=['GET', 'POST'])
 def add_actuator():
-    global atuadores
     if request.method == 'POST':
         atuador = request.form['atuador']
     else:
@@ -115,15 +114,10 @@ def demonstration():
     return jsonify(sensores)
 
 
-@app.route('/sensors')
-def sensors():
-    sensores = {'T1': 56, 'T2': 25, 'T3': 15}
-    return render_template('sensors.html', devices=sensores)
 
 
 @app.route('/actuators')
 def actuators():
-    atuadores = {'Servo Motor': 0, 'Lâmpada': 1}
     return render_template('actuators.html', devices=atuadores)
 
 

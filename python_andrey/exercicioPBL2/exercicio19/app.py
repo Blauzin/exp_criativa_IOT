@@ -85,16 +85,9 @@ def demonstration():
     return jsonify(sensores)
 
 
-@app.route('/sensors')
-def sensors():
-    sensores = {'T1': 56, 'T2': 25, 'T3': 15}
-    return render_template('sensors.html', devices=sensores)
 
 
-@app.route('/actuators')
-def actuators():
-    atuadores = {'Servo Motor': 0, 'Lâmpada': 1}
-    return render_template('actuators.html', devices=atuadores)
+
 
 
 if __name__ == '__main__':

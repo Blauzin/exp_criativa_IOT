@@ -3,7 +3,7 @@
 from flask import Blueprint, render_template, request
 
 actuators_bp = Blueprint('actuators', __name__, template_folder='templates')
-
+global atuadores
 atuadores = {'Servo Motor': 0, 'Lâmpada': 1}
 
 
@@ -34,4 +34,8 @@ def del_actuator():
     else:
         atuador = request.args.get('atuador', None)
     atuadores.pop(atuador)
+    return render_template('actuators.html', devices=atuadores)
+
+@actuators_bp.route('/actuators')
+def actuators():
     return render_template('actuators.html', devices=atuadores)

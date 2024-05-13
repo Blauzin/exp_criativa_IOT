@@ -35,3 +35,7 @@ def del_sensor():
         sensor = request.args.get('sensor', None)
     sensores.pop(sensor)
     return render_template('sensors.html', devices=sensores)
+
+@sensors_bp.route('/sensors')
+def sensors():
+    return render_template('sensors.html', devices=sensores)

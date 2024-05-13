@@ -35,3 +35,7 @@ def del_actuator():
         atuador = request.args.get('atuador', None)
     atuadores.pop(atuador)
     return render_template('actuators.html', devices=atuadores)
+
+@actuators_bp.route('/actuators')
+def actuators():
+    return render_template('actuators.html', devices=atuadores)

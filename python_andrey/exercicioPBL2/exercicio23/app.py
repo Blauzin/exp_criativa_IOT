@@ -4,12 +4,11 @@ from actuators import actuators_bp
 
 app = Flask(__name__)
 
-sensores = {'Umidade': 56, 'Temperatura': 25, 'Luminosidade': 15}
-atuadores = {'Servo Motor': 0, 'Lâmpada': 1}
 
 users = {
     'user1': '1234',
     'user2': '1234'
+
 }
 
 app.register_blueprint(sensors_bp)
@@ -57,7 +56,6 @@ def del_user():
 
 @app.route('/list_users')
 def list_users():
-    global users
     return render_template('users.html', devices=users)
 
 
@@ -84,17 +82,6 @@ def home():
 def demonstration():
     return jsonify(sensores)
 
-
-@app.route('/sensors')
-def sensors():
-    sensores = {'T1': 56, 'T2': 25, 'T3': 15}
-    return render_template('sensors.html', devices=sensores)
-
-
-@app.route('/actuators')
-def actuators():
-    atuadores = {'Servo Motor': 0, 'Lâmpada': 1}
-    return render_template('actuators.html', devices=atuadores)
 
 
 if __name__ == '__main__':
